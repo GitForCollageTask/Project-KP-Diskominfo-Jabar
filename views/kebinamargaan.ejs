@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%=title%></title>
+	<link rel="shortcut icon" type="image/png" href="/../images/favicon.png"/>
+</head>
+<body>
+	<h3>Standar Biaya Khusus Menu</h3>
+	<select id="kategori" onchange="getData(this)">
+		<option value="pilih">--Pilih Salah Satu--</option>
+		<option value="emlak">Biaya Kegiatan Fisik Jalan</option>
+		<option value="hat">Biaya Kegiatan Fisik Jembatan</option>
+		<option value="vasita">Kegiatan Perencanaan dan Pengawasan Teknis</option>
+		<option value="Kegiatan Pembangunan Jalan dan Jembatan">Kegiatan Pembangunan Jalan dan Jembatan</option>
+		<option value="Kegiatan Pengawasan Pembangunan Jalan/Jembatan">Kegiatan Pengawasan Pembangunan Jalan/Jembatan</option>
+		<option value="Biaya Sewa Alat/Kendaraan">Biaya Sewa Alat/Kendaraan</option>		
+	</select>
+	<p></p>
+	<select id="emlak" name="currentList" onChange=";" style="display:none;">
+	     <option value="hat">Harga Satuan Kegiatan Peningkatan Jalan(HOTMIX)</option>
+	     <option value="emlak">Harga Satuan Kegiatan Peningkatan Jalan(BETON)</option>
+	</select>
+
+	<script>
+	function getData(dropdown) {
+	var value = dropdown.options[dropdown.selectedIndex].value;
+		if (value == 'emlak'){
+		document.getElementById("emlak").style.display = "block";
+		}
+		if(value == 'vasita'){
+		document.getElementById("vasita").style.display = "block";
+		}
+	}
+</script>
+
+</body>
+</html>
