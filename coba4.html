@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Show Hide Elements Using Select Box</title>
+<style type="text/css">
+    .box{
+        color: #fff;
+        padding: 20px;
+        display: none;
+        margin-top: 20px;
+    }
+    .red{}
+    .green{ font-size: 20px; color: red }
+    .blue{ background: #0000ff; }
+    .bkfj01{color: red}
+</style>
+
+</head>
+<body>
+    <div>
+        <select>
+            <option>Choose Color</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+        </select>
+    </div>
+    <div class="red box">
+        <p>
+            <label>KATEGORI
+                <select name="kategori">
+                    <option value="">-Pilih Salah Satu--</option>
+                    <option value="bkfj01">Biaya Kegiatan Fisik Jalan</option>
+                    <option value="bkfj02">Biaya Kegiatan Fisik Jembatan</option>
+                    <option value="kppt">Kegiatan Perencanaan dan Pengawasan Teknis</option>
+                    <option value="kpjj01">Kegiatan Pembangunan Jalan dan Jembatan</option>
+                    <option value="kppj02">Kegiatan Pengawasan Pembangunan Jalan/Jembatan</option>
+                    <option value="bsak">Biaya Sewa Alat/Kendaraan</option>
+                </select>
+                </label>
+            </p>
+    </div>
+    <div class="green box">
+        <table id = "t1" border="1">
+                    <tr>
+                        <th>Header 1</th>
+                        <th>Header 2</th>
+                    </tr>
+                    <tr>
+                        <td>row 1, cell 1</td>
+                        <td>row 1, cell 2</td>
+                    </tr>
+                    <tr>
+                        <td>row 2, cell 1</td>
+                        <td>row 2, cell 2</td>
+                    </tr>
+                </table> 
+    </div>
+    <div class="bkfj01 box">
+        <table id = "t1" border="1">
+                    <tr>
+                        <th>Header 1</th>
+                        <th>Header 2</th>
+                    </tr>
+                    <tr>
+                        <td>row 1, cell 1</td>
+                        <td>row 1, cell 2</td>
+                    </tr>
+                    <tr>
+                        <td>row 2, cell 1</td>
+                        <td>row 2, cell 2</td>
+                    </tr>
+                </table> 
+    </div>
+    <div class="blue box">You have selected <strong>blue option</strong> so i am here</div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue){
+                $(".box").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            } else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+});
+</script>
+</body>
+</html>                            

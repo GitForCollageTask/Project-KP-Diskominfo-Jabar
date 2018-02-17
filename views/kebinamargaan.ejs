@@ -5,33 +5,165 @@
 	<link rel="shortcut icon" type="image/png" href="/../images/favicon.png"/>
 </head>
 <body>
-	<h3>Standar Biaya Khusus Menu</h3>
-	<select id="kategori" onchange="getData(this)">
-		<option value="pilih">--Pilih Salah Satu--</option>
-		<option value="emlak">Biaya Kegiatan Fisik Jalan</option>
-		<option value="hat">Biaya Kegiatan Fisik Jembatan</option>
-		<option value="vasita">Kegiatan Perencanaan dan Pengawasan Teknis</option>
-		<option value="Kegiatan Pembangunan Jalan dan Jembatan">Kegiatan Pembangunan Jalan dan Jembatan</option>
-		<option value="Kegiatan Pengawasan Pembangunan Jalan/Jembatan">Kegiatan Pengawasan Pembangunan Jalan/Jembatan</option>
-		<option value="Biaya Sewa Alat/Kendaraan">Biaya Sewa Alat/Kendaraan</option>		
-	</select>
-	<p></p>
-	<select id="emlak" name="currentList" onChange=";" style="display:none;">
-	     <option value="hat">Harga Satuan Kegiatan Peningkatan Jalan(HOTMIX)</option>
-	     <option value="emlak">Harga Satuan Kegiatan Peningkatan Jalan(BETON)</option>
-	</select>
+	<h1  style="font-style: italic;">Standar Biaya Khusus Menu</h1>
+	<!-- <div id="mainselection"> -->
+		<form id="rentalProperties">
+			<p>
+				<label>KATEGORI
+					<select name="kategori">
+		                <option value="">-Pilih Salah Satu--</option>
+		                <option value="bkfj01">Biaya Kegiatan Fisik Jalan</option>
+		                <option value="bkfj02">Biaya Kegiatan Fisik Jembatan</option>
+		                <option value="kppt">Kegiatan Perencanaan dan Pengawasan Teknis</option>
+		                <option value="kpjj01">Kegiatan Pembangunan Jalan dan Jembatan</option>
+		                <option value="kppj02">Kegiatan Pengawasan Pembangunan Jalan/Jembatan</option>
+		                <option value="bsak">Biaya Sewa Alat/Kendaraan</option>
+            		</select>
+				</label>
+			</p>
+			<p>
+				<label>SUB KATEGORI
+					<select name="subkategori" id="subkategori">
+						<option value="">--Pilih Table--</option>
+						<option value="hsk01">Harga Satuan Kegiatan Peningkatan Jalan(HOTMIX)</option>
+					    <option value="hsk02">Harga Satuan Kegiatan Peningkatan Jalan(BETON)</option>
+					    <option value="hskr">Harga Satuan Kegiatan Rehabilitas/Pemeliharaan Berkala (HOTMIX)</option>
+					    <option value="hskpr">Harga Satuan Kegiatan Pemeliharaan Rutin</option>
+					</select>
+				</label>
+			</p>
+			<p>
+				<label>SUB KATEGORI
+					<select name="subkategori02" id="subkategori02">
+						<option value="">--Pilih Salah Satu--</option>
+						<option value="hsdm">Harga Satuan Dasar Minimal Penanganan Jembatan</option>
+					</select>
+				</label>
+			</p>
+				<!--Table 1.1-->
+				<table id = "t1" border="1" style="text-align:center; display: none;">
+					<caption>HARGA SATUAN KEGIATAN PENINGKATAN JALAN (HOTMIX)</caption>
+                    <tr>
+                        <th>LEBAR PERKERASAN</th>
+                        <th>HARGA SATUAN MAKSIMAL</th>
+                    </tr>
+                    <tr>
+                        <td>(M)</td>
+                        <td>(RP/KM)</td>
+                    </tr>
+                    <tr>
+                        <td>3.5</td>
+                        <td>3,066,744,000</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>3,344,824,000</td>
+                    </tr>
+                    <tr>
+                        <td>4.5</td>
+                        <td>3,622,873,000</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>3,900,923,000</td>
+                    </tr>
+                    <tr>
+                        <td>5.5</td>
+                        <td>4,178,972,000</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>4,457,022,000</td>
+                    </tr>
+                    <tr>
+                        <td>6.5</td>
+                        <td>4,735,072,000</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>5,013,121,000</td>
+                    </tr>
+                </table>
+                <!--Table 1.2-->
+                	<table id = "t2" border="1" style="text-align:center; display: none;">
+					<caption>HARGA SATUAN KEGIATAN PENINGKATAN JALAN (BETON)</caption>
+                    <tr>
+                        <th>LEBAR PERKERASAN</th>
+                        <th>HARGA SATUAN MAKSIMAL</th>
+                    </tr>
+                    <tr>
+                        <td>(M)</td>
+                        <td>(RP/KM)</td>
+                    </tr>
+                    <tr>
+                        <td>3.5</td>
+                        <td>4,141,561,000</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>4,506,575,000</td>
+                    </tr>
+                    <tr>
+                        <td>4.5</td>
+                        <td>4,871,589,000</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>5,236,603,000</td>
+                    </tr>
+                    <tr>
+                        <td>5.5</td>
+                        <td>5,601,618,000</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>5,996,632,000</td>
+                    </tr>
+                    <tr>
+                        <td>6.5</td>
+                        <td>6,331,646,000</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>6,696,660,000</td>
+                    </tr>
+                </table>
+                <!--Table 1.12-->
+				<table id = "t12" border="1" style="text-align:center; display: none;">
+					<caption>HARGA SATUAN DASAR MINIMAL PENANGANAN JEMBATAN</caption>
+                    <tr>
+                        <th>PENANGANAN</th>
+                        <th>RANGKA BAJA</th>
+                        <th>BETON KONVENSIONAL</th>
+                        <th>PRESTRESSED</th>
+                        <th>BOX CULVERT</th>
+                    </tr>
+                    <tr>
+                        <td>RUTIN (NON STRUKTURAL)</td>
+                        <td>565,070.00</td>
+                        <td>525,001.40</td>
+                        <td>535,001.40</td>
+                        <td>525,001.40</td>
+                    </tr>
+                    <tr>
+                        <td>REHABILITASI/PERBAIKAN (STRUKTURAL)</td>
+                        <td>151,888,761.20</td>
+                        <td>129,918,839.60</td>
+                        <td>139,491,125.40</td>
+                        <td>59,775,159.40</td>
+                    </tr>
+                    <tr>
+                        <td>PENGGATIAN BARU</td>
+                        <td>263,844,539.20</td>
+                        <td>223,531,418.00</td>
+                        <td>239,299,953.00</td>
+                        <td>114,838,662.40</td>
+                    </tr>
+                    
+                </table>
 
-	<script>
-	function getData(dropdown) {
-	var value = dropdown.options[dropdown.selectedIndex].value;
-		if (value == 'emlak'){
-		document.getElementById("emlak").style.display = "block";
-		}
-		if(value == 'vasita'){
-		document.getElementById("vasita").style.display = "block";
-		}
-	}
-</script>
-
+		</form>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/../javascripts/kebinamargaan.js"></script>
 </body>
 </html>
