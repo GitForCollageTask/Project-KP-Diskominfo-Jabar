@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div { margin: 20px; }
+
+/* -------------------- Select Box Styles: danielneumann.com Method */
+/* -------------------- Source: http://danielneumann.com/blog/how-to-style-dropdown-with-css-only/ */
+#mainselection select {
+   border: 0;
+   color: #EEE;
+   background: transparent;
+   font-size: 20px;
+   font-weight: bold;
+   padding: 2px 10px;
+   width: 378px;
+   *width: 350px;
+   *background: #58B14C;
+   -webkit-appearance: none;
+}
+
+#mainselection {
+   overflow:hidden;
+   width:350px;
+   -moz-border-radius: 9px 9px 9px 9px;
+   -webkit-border-radius: 9px 9px 9px 9px;
+   border-radius: 9px 9px 9px 9px;
+   box-shadow: 1px 1px 11px #330033;
+   background: #58B14C url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 319px center;
+}
+
+	</style>
+</head>
+<body>
+<form id="rentalProperties">
+    <!-- Paragraphs are used for forms, which the upcoming HTML5 form specs help to clarify
+        http://www.whatwg.org/specs/web-apps/current-work/multipage/forms.html#writing-a-form's-user-interface -->
+    <p>
+        <label>Property Status
+            <select name="status">
+                <option value=""></option>
+                <option value="Shared">Shared</option>
+                <option value="Vacant">Vacant</option>
+            </select>
+        </label>
+    </p>
+    <p>
+        <label>Gender Preference
+            <!-- The gender select is not hidden at this stage, for that would be fatal for those who don't have scripting available
+                Notice too that no unique identifiers are required, except for on the form tag itself. They can be used for
+                other purposes such as styling, but with scripting things are more flexible and less restricted without them -->
+            <select name="gender">
+                <option value="No Preference">No Preference</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+            </select>
+        </label>
+    </p>
+    <div id="mainselection">
+  
+  <select>
+    <option>Select an Option</option>
+    <option>Option 1</option>
+    <option>Option 2</option>
+  </select>
+
+</div>
+</form>
+<script>
+	function toggleShared() {
+    var form = this.form,
+        status = form.elements.status,
+        // Use gender's parent because we want the label to be hidden too
+        gender = form.elements.gender.parentNode;
+
+    // Start by giving the default nature of things, with gender hidden
+    gender.style.display = 'none';
+
+    // Now only show gender if applicable
+    if (status.value == 'Shared') {
+        // An empty string is more compatible than using 'block' or 'inline' as it allows the element to use its own default display type.
+        gender.style.display = '';
+    }
+}
+
+// connect the function to the selects onchange event
+var form = document.getElementById('rentalProperties');
+form.elements.status.onchange = toggleShared;
+
+// and lastly, trigger the onchange event, which causes the gender select to be hidden
+form.elements.status.onchange();
+
+</script>
+</body>
+</html>

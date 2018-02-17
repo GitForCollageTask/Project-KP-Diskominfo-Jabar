@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WORK!!!</title>
+</head>
+<body>
+	<select id="kategori" name="kategori">
+		<option value="">-Pilih Salah Satu--</option>
+		<option value="bkfj01">Biaya Kegiatan Fisik Jalan</option>
+		<option value="bkfj02">Biaya Kegiatan Fisik Jembatan</option>
+		<option value="kppt">Kegiatan Perencanaan dan Pengawasan Teknis</option>
+		<option value="kpjj01">Kegiatan Pembangunan Jalan dan Jembatan</option>
+		<option value="kppj02">Kegiatan Pengawasan Pembangunan Jalan/Jembatan</option>
+		<option value="bsak">Biaya Sewa Alat/Kendaraan</option>
+    </select>
+    <p>
+    	<select id="subkategori">
+    		<option value="">-Pilih Salah Satu--</option>
+			<option value="hsk01">Harga Satuan Kegiatan Peningkatan Jalan(HOTMIX)</option>
+			<option value="hsk02">Harga Satuan Kegiatan Peningkatan Jalan(BETON)</option>
+			<option value="hskr">Harga Satuan Kegiatan Rehabilitas/Pemeliharaan Berkala (HOTMIX)</option>
+			<option value="hskpr">Harga Satuan Kegiatan Pemeliharaan Rutin</option>
+    	</select>
+    </p>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#kategori').change(function(){
+			$('select:subkategori').hide();
+			if ($(this).val() == "bkfj01") {
+				$('subkategori').show();
+			}
+		});
+	});
+</script>
+</body>
+</html>
